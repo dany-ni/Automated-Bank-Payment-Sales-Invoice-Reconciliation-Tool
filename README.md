@@ -7,7 +7,7 @@ invoices, including split/combined payments and early-payment discount (*Skonto*
 Throughout this document, "invoice" refers to a sales invoice (*Ausgangsrechnung*) issued by the company, and "payment" refers to an incoming payment (*Zahlungseingang*) recorded on the bank statement.
 
 
-## Note on data
+## Data
 All example data in this repository (`data/` and `reports/`) is synthetic. It was generated for demonstration purposes only and does not represent any real person, company, bank account, or transaction.
 
 ## The problem
