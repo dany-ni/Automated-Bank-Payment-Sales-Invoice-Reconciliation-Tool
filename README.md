@@ -103,7 +103,7 @@ manual review.
 
 | File | Responsibility |
 |------|----------------|
-| `config.py` | Central settings: input/output file paths, CSV delimiter and date format, invoice number pattern (`INVOICE_NUMBER_PATTERN`), and Skonto rounding tolerance (`TOLERANCE_SKONTO`) |
+| `config.py` | Central settings: input/output file paths, CSV delimiter and date format, invoice number pattern, and Skonto rounding tolerance |
 | `bank_invoice_parse.py` | Loads and cleans the two raw CSV files; extracts invoice numbers from payment references |
 | `grouping.py` | Groups payments and invoices by which invoice numbers they reference (1:1, N:1, 1:N, N:M) |
 | `matcher.py` | Applies the matching and discount-validity rules to each group |
