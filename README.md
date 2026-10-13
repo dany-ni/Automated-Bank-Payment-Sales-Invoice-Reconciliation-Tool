@@ -1,16 +1,14 @@
 
 # Automated Bank Payment–Sales Invoice Reconciliation Tool
 
+> **⚠️ Data Source:** All data in this project is **synthetic and fictional**. It was generated for demonstration purposes only and does not represent any real company, bank account, or transaction.
+
 A Python tool that automatically matches incoming bank payments to sales 
 invoices, including split/combined payments and early-payment discount (*Skonto*) validation, flags ambiguous cases for manual review and produces Excel reports.
 
 Throughout this document, "invoice" refers to a sales invoice (*Ausgangsrechnung*) issued by the company, and "payment" refers to an incoming payment (*Zahlungseingang*) recorded on the bank statement.
 
-
-## Data
-All example data in this repository (`data/` and `reports/`) is synthetic. It was generated for demonstration purposes only and does not represent any real person, company, bank account, or transaction.
-
-## The problem
+## The Problem
 
 When finance goes through the bank statement (*Kontoauszug*) and checks incoming payments against the list of sales invoices (*Ausgangsrechnungen*), these questions are often raised:
 Which invoice does this payment belong to?
@@ -21,7 +19,7 @@ transfer, or was one invoice paid in several transfers?
 This tool helps finance answer these questions efficiently while avoiding a lot of repetitive manual work and mistakes.
 
 
-## Core assumptions
+## Core Assumptions
 
 This tool has the following assumptions:
 
@@ -37,7 +35,7 @@ Tolerance (±0.01) is only used when an early-payment discount (*Skonto*) is con
 
 
 
-## What this tool does
+## What This Tool Does
 
 It takes two CSV exports — the bank statement and the sales invoice list — and:
 
@@ -51,7 +49,7 @@ It takes two CSV exports — the bank statement and the sales invoice list — a
 4. **Produces four Excel reports**, showing what is
    confirmed and what still needs manual review.
 
-## Output: four reports
+## Output: Four Reports
 
 *(Report 3 is generated in two language versions — English and German — so five Excel files are produced in total.)*
 
@@ -82,7 +80,7 @@ another number that is not on the list of sales invoices. It is worth checking t
 Report 2 did not find such a clue. This does not rule out a possible match already flagged in Report 1. It is worth checking Report 1 before regarding an invoice as unpaid.
 
 
-## Known limitations
+## Known Limitations
 
 These are deliberate, conservative design choices rather than oversights.
 In a finance context, it is safer for the tool to flag something as
@@ -99,7 +97,7 @@ If the payment reference text does not include an invoice number, or include a n
 manual review.
 
 
-## Project structure
+## Project Structure
 
 | File | Responsibility |
 |------|----------------|
